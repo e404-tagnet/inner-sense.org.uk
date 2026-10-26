@@ -7,16 +7,16 @@
   <meta name="description" content="Inner Sense Therapy - Cognitive Behavioural Therapy services coming soon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;0,700;1,700&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green-1: #e8f5e9;
-      --green-2: #c8e6c9;
-      --green-3: #a5d6a7;
-      --green-4: #81c784;
-      --green-dark: #1b5e20;
-      --text-dark: #1b3a1b;
-      --text-mid: #4a6b4a;
+      --green-1: #d6ddd3;
+      --green-2: #b0bea9;
+      --green-3: #8b9e82;
+      --green-4: #6b7f63;
+      --green-dark: #243d21;
+      --text-dark: #0a0a0a;
+      --text-mid: #374731;
     }
 
     * {
@@ -38,8 +38,8 @@
       font-family: 'Montserrat', sans-serif;
       color: var(--text-dark);
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0%, transparent 45%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.5) 0%, transparent 45%),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.45) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.35) 0%, transparent 45%),
         linear-gradient(135deg, var(--green-1) 0%, var(--green-2) 40%, var(--green-3) 70%, var(--green-4) 100%);
       background-attachment: fixed;
     }
@@ -55,7 +55,7 @@
     .logo {
       flex: 0 1 360px;
       max-width: min(50vw, 360px);
-      filter: drop-shadow(0 4px 18px rgba(27, 94, 32, 0.18));
+      position: relative;
     }
 
     .logo svg {
@@ -64,7 +64,28 @@
       display: block;
     }
 
-    .logo svg :is(path, circle, line, ellipse, rect, polyline) {
+    .logo .shadow {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      transform: translate(10px, 10px);
+      pointer-events: none;
+    }
+
+    .logo .shadow svg :is(path, circle, line, ellipse, rect, polyline) {
+      stroke: #000000;
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .logo .front {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo .front svg :is(path, circle, line, ellipse, rect, polyline) {
       stroke: var(--green-dark);
       stroke-width: 4;
       stroke-linecap: round;
@@ -80,34 +101,36 @@
 
     .coming-soon {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
       font-weight: 400;
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--text-mid);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      margin-top: -0.6rem;
     }
 
     .brand {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      font-weight: 700;
+      font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+      font-weight: 800;
       letter-spacing: -0.02em;
-      line-height: 1.05;
+      line-height: 1.0;
       text-transform: uppercase;
       color: var(--text-dark);
-      text-shadow: 0 2px 12px rgba(27, 58, 27, 0.12);
     }
 
     .tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      font-size: clamp(1.2rem, 2.1vw, 1.7rem);
       font-weight: 400;
       font-style: italic;
       color: var(--text-mid);
-      margin-top: 1.5rem;
-      letter-spacing: 0.05em;
-      max-width: 34ch;
+      margin-top: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      max-width: 40ch;
+      line-height: 1.5;
     }
 
     @media (max-width: 680px) {
@@ -117,6 +140,9 @@
       }
       .logo {
         max-width: min(70vw, 280px);
+      }
+      .coming-soon {
+        margin-top: 0;
       }
       .text {
         text-align: center;
@@ -137,36 +163,62 @@
 <body>
   <main class="hero" role="main">
     <div class="logo" aria-hidden="true">
-      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <path d="M110 185
-                 C90 185 75 180 65 170
-                 C55 160 52 145 58 130
-                 C45 122 38 108 42 90
-                 C46 72 62 62 78 60
-                 C86 40 102 30 122 28
-                 C142 26 158 36 168 52
-                 C182 56 190 70 190 88
-                 C190 104 180 116 168 122
-                 C174 138 170 154 160 168
-                 C150 180 132 185 116 185
-                 L114 185 L112 200 L108 185 Z" />
-
-        <path d="M58 130 C72 128 86 122 96 112 C106 102 112 88 112 70" />
-        <path d="M96 112 C112 106 128 108 140 116 C152 124 160 140 162 158" />
-        <path d="M140 116 C154 104 172 100 186 104" />
-        <path d="M112 70 C114 54 124 44 138 40 C152 36 166 40 174 50" />
-
-        <path d="M72 86 C72 74 80 66 90 66 C100 66 108 74 108 84 C108 94 100 102 90 102 C80 102 72 96 72 86 Z" />
-        <path d="M90 66 L90 84 L100 76" />
-        <path d="M82 84 L98 84" />
-
-        <path d="M148 80 C156 76 166 78 172 84" />
-        <path d="M148 86 C154 83 162 84 168 90" />
-        <path d="M148 92 C154 90 160 92 164 96" />
-
-        <path d="M98 148 C112 156 132 156 148 148" />
-        <path d="M100 160 C118 166 136 164 150 156" />
-      </svg>
+      <div class="shadow">
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <path d="M110 185
+                   C90 185 75 180 65 170
+                   C55 160 52 145 58 130
+                   C45 122 38 108 42 90
+                   C46 72 62 62 78 60
+                   C86 40 102 30 122 28
+                   C142 26 158 36 168 52
+                   C182 56 190 70 190 88
+                   C190 104 180 116 168 122
+                   C174 138 170 154 160 168
+                   C150 180 132 185 116 185
+                   L114 185 L112 200 L108 185 Z" />
+          <path d="M58 130 C72 128 86 122 96 112 C106 102 112 88 112 70" />
+          <path d="M96 112 C112 106 128 108 140 116 C152 124 160 140 162 158" />
+          <path d="M140 116 C154 104 172 100 186 104" />
+          <path d="M112 70 C114 54 124 44 138 40 C152 36 166 40 174 50" />
+          <path d="M72 86 C72 74 80 66 90 66 C100 66 108 74 108 84 C108 94 100 102 90 102 C80 102 72 96 72 86 Z" />
+          <path d="M90 66 L90 84 L100 76" />
+          <path d="M82 84 L98 84" />
+          <path d="M148 80 C156 76 166 78 172 84" />
+          <path d="M148 86 C154 83 162 84 168 90" />
+          <path d="M148 92 C154 90 160 92 164 96" />
+          <path d="M98 148 C112 156 132 156 148 148" />
+          <path d="M100 160 C118 166 136 164 150 156" />
+        </svg>
+      </div>
+      <div class="front">
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <path d="M110 185
+                   C90 185 75 180 65 170
+                   C55 160 52 145 58 130
+                   C45 122 38 108 42 90
+                   C46 72 62 62 78 60
+                   C86 40 102 30 122 28
+                   C142 26 158 36 168 52
+                   C182 56 190 70 190 88
+                   C190 104 180 116 168 122
+                   C174 138 170 154 160 168
+                   C150 180 132 185 116 185
+                   L114 185 L112 200 L108 185 Z" />
+          <path d="M58 130 C72 128 86 122 96 112 C106 102 112 88 112 70" />
+          <path d="M96 112 C112 106 128 108 140 116 C152 124 160 140 162 158" />
+          <path d="M140 116 C154 104 172 100 186 104" />
+          <path d="M112 70 C114 54 124 44 138 40 C152 36 166 40 174 50" />
+          <path d="M72 86 C72 74 80 66 90 66 C100 66 108 74 108 84 C108 94 100 102 90 102 C80 102 72 96 72 86 Z" />
+          <path d="M90 66 L90 84 L100 76" />
+          <path d="M82 84 L98 84" />
+          <path d="M148 80 C156 76 166 78 172 84" />
+          <path d="M148 86 C154 83 162 84 168 90" />
+          <path d="M148 92 C154 90 160 92 164 96" />
+          <path d="M98 148 C112 156 132 156 148 148" />
+          <path d="M100 160 C118 166 136 164 150 156" />
+        </svg>
+      </div>
     </div>
     <div class="text">
       <p class="coming-soon">Coming Soon</p>
