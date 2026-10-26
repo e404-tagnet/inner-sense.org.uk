@@ -54,12 +54,21 @@
 
     .logo {
       flex: 0 1 320px;
-      max-width: min(46vw, 360px);
+      max-width: min(42vw, 360px);
+    }
+
+    .logo-inner {
+      width: 100%;
+      aspect-ratio: 1312 / 1199;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
       display: block;
     }
 
@@ -110,7 +119,7 @@
         gap: 1.8rem;
       }
       .logo {
-        max-width: min(58vw, 300px);
+        max-width: min(55vw, 300px);
       }
       .coming-soon {
         margin-top: 0;
@@ -142,7 +151,9 @@
 <body>
   <main class="hero" role="main">
     <div class="logo" aria-hidden="true">
-      <img src="/logo.png" alt="Inner Sense Therapy logo" width="179" height="161">
+      <div class="logo-inner">
+        <img src="/logo.png" alt="Inner Sense Therapy logo" width="1312" height="1199">
+      </div>
     </div>
     <div class="text">
       <p class="coming-soon">Coming Soon</p>
