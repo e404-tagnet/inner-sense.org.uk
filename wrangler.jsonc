@@ -3,7 +3,12 @@
   "name": "inner-sense-org-uk",
   "main": "src/index.js",
   "compatibility_date": "2026-10-26",
-  "account_id": "<ACCOUNT_ID>",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "inner-sense.org.uk", "custom_domain": true },
+    { "pattern": "www.inner-sense.org.uk", "custom_domain": true }
+  ],
+  "account_id": "e2316c103b9bd19094ca4e8f2d3a68f1",
   "assets": {
     "directory": "./public",
     "binding": "ASSETS"
