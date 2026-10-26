@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inner Sense Therapy | Coming Soon</title>
-  <meta name="description" content="Inner Sense Therapy - Cognitive Behavioural Therapy services coming soon.">
+  <meta name="description" content="Inner Sense Therapy - Cognitive Behavioural Therapy and talking therapy services coming soon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,6 +17,9 @@
       --green-dark: #243d21;
       --text-dark: #0a0a0a;
       --text-mid: #374731;
+      --card-bg: rgba(255, 255, 255, 0.22);
+      --card-border: rgba(36, 61, 33, 0.35);
+      --card-shadow: rgba(36, 61, 33, 0.12);
     }
 
     * {
@@ -26,7 +29,7 @@
     }
 
     html, body {
-      height: 100%;
+      min-height: 100%;
     }
 
     body {
@@ -44,17 +47,41 @@
       background-attachment: fixed;
     }
 
-    .hero {
+    .page {
+      width: min(100%, 1100px);
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: clamp(2.5rem, 7vw, 6rem);
-      width: min(100%, 1200px);
+      gap: 2.5rem;
+    }
+
+    .header {
+      text-align: center;
+      width: 100%;
+    }
+
+    .coming-soon {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 4.2vw, 3.4rem);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: var(--text-dark);
     }
 
     .logo {
-      flex: 0 1 320px;
-      max-width: min(42vw, 360px);
+      width: min(260px, 36vw);
     }
 
     .logo-inner {
@@ -72,71 +99,97 @@
       display: block;
     }
 
-    .text {
-      flex: 1 1 auto;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: clamp(1.4rem, 3vw, 2.2rem);
+      box-shadow: 0 10px 30px var(--card-shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       text-align: left;
-      min-width: 260px;
-      overflow: visible;
     }
 
-    .coming-soon {
+    .card h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.2rem, 2.4vw, 1.9rem);
-      font-weight: 500;
-      letter-spacing: 0.32em;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-mid);
-      margin-bottom: 1.2rem;
-      margin-top: -0.8rem;
+      color: var(--green-dark);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--card-border);
     }
 
-    .brand {
+    .card p {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.8rem, 4.2vw, 3.4rem);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      line-height: 1.15;
-      text-transform: uppercase;
-      color: var(--text-dark);
+      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-mid);
     }
 
     .tagline {
       font-family: 'Cinzel', serif;
-      font-size: clamp(0.95rem, 1.8vw, 1.4rem);
+      font-size: clamp(0.9rem, 1.7vw, 1.25rem);
       font-weight: 400;
       color: var(--text-mid);
-      margin-top: 1.6rem;
-      letter-spacing: 0.12em;
+      text-align: center;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      max-width: 42ch;
       line-height: 1.6;
+      max-width: 60ch;
     }
 
     @media (max-width: 680px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.8rem;
+      body {
+        padding: 1.5rem;
       }
-      .logo {
-        max-width: min(55vw, 300px);
+
+      .page {
+        gap: 2rem;
       }
+
       .coming-soon {
-        margin-top: 0;
-        font-size: clamp(1rem, 4vw, 1.4rem);
+        font-size: clamp(0.9rem, 3.8vw, 1.3rem);
         letter-spacing: 0.25em;
       }
+
       .brand {
         font-size: clamp(1.5rem, 7vw, 2.6rem);
         letter-spacing: 0.06em;
       }
-      .tagline {
-        font-size: clamp(0.8rem, 3.5vw, 1.1rem);
-        letter-spacing: 0.08em;
-        max-width: none;
+
+      .logo {
+        width: min(220px, 55vw);
       }
-      .text {
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
         text-align: center;
+      }
+
+      .card h2 {
+        text-align: center;
+      }
+
+      .tagline {
+        font-size: clamp(0.8rem, 3.5vw, 1.05rem);
+        letter-spacing: 0.1em;
+        max-width: none;
       }
     }
 
@@ -149,17 +202,31 @@
   </style>
 </head>
 <body>
-  <main class="hero" role="main">
+  <main class="page" role="main">
+    <header class="header">
+      <p class="coming-soon">Coming Soon</p>
+      <h1 class="brand">Inner Sense Therapy</h1>
+    </header>
+
     <div class="logo" aria-hidden="true">
       <div class="logo-inner">
         <img src="/logo.png" alt="Inner Sense Therapy logo" width="1312" height="1199">
       </div>
     </div>
-    <div class="text">
-      <p class="coming-soon">Coming Soon</p>
-      <h1 class="brand">Inner Sense Therapy</h1>
-      <p class="tagline">A calm, clear space for CBT and talking therapy.</p>
-    </div>
+
+    <section class="cards" aria-label="Therapy services">
+      <article class="card">
+        <h2>CBT</h2>
+        <p>A practical, structured therapy that helps you notice unhelpful thought patterns and gently change how you respond to them.</p>
+      </article>
+
+      <article class="card">
+        <h2>Talking Therapy</h2>
+        <p>A calm, confidential space to talk things through, make sense of difficult feelings, and find a clearer way forward.</p>
+      </article>
+    </section>
+
+    <p class="tagline">A calm, clear space for CBT and talking therapy.</p>
   </main>
 </body>
 </html>
