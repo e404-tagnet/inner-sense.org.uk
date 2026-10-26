@@ -7,7 +7,7 @@
   <meta name="description" content="Inner Sense Therapy - Cognitive Behavioural Therapy and talking therapy services coming soon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --green-1: #d6ddd3;
@@ -15,11 +15,15 @@
       --green-3: #8b9e82;
       --green-4: #6b7f63;
       --green-dark: #243d21;
+      --green-darker: #182a15;
       --text-dark: #0a0a0a;
       --text-mid: #374731;
-      --card-bg: rgba(255, 255, 255, 0.22);
-      --card-border: rgba(36, 61, 33, 0.35);
-      --card-shadow: rgba(36, 61, 33, 0.12);
+      --card-bg: rgba(24, 42, 21, 0.88);
+      --card-border: rgba(255, 255, 255, 0.15);
+      --card-shadow: rgba(0, 0, 0, 0.18);
+      --card-text: #f5f7f4;
+      --card-muted: #b8c4b2;
+      --card-accent: #c5d4bd;
     }
 
     * {
@@ -110,39 +114,88 @@
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: clamp(1.4rem, 3vw, 2.2rem);
-      box-shadow: 0 10px 30px var(--card-shadow);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: clamp(1.6rem, 3.2vw, 2.4rem);
+      box-shadow: 0 14px 40px var(--card-shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       text-align: left;
+      color: var(--card-text);
     }
 
-    .card h2 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1rem, 2vw, 1.35rem);
+    .card .word {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
       font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-dark);
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--card-border);
+      color: var(--card-text);
+      margin-bottom: 0.2rem;
+      line-height: 1.1;
     }
 
-    .card p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+    .card .phonetic {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+      font-weight: 400;
+      color: var(--card-muted);
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .card .definition {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.95rem, 1.7vw, 1.15rem);
       font-weight: 400;
       line-height: 1.7;
-      color: var(--text-mid);
+      color: var(--card-text);
+    }
+
+    .card .definition strong {
+      font-weight: 600;
+      color: var(--card-accent);
+    }
+
+    .card .definition em {
+      font-style: italic;
+      color: var(--card-muted);
+    }
+
+    .card .source {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      font-weight: 500;
+      color: var(--card-muted);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      margin-top: 1.2rem;
+    }
+
+    .card .section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-weight: 600;
+      color: var(--card-accent);
+      margin-top: 1.4rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .card .example {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+      line-height: 1.6;
+      color: var(--card-muted);
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(255, 255, 255, 0.2);
     }
 
     .tagline {
       font-family: 'Cinzel', serif;
       font-size: clamp(0.9rem, 1.7vw, 1.25rem);
       font-weight: 400;
-      color: var(--text-mid);
+      color: var(--text-dark);
       text-align: center;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -179,11 +232,15 @@
       }
 
       .card {
-        text-align: center;
+        text-align: left;
       }
 
-      .card h2 {
-        text-align: center;
+      .card .word {
+        text-align: left;
+      }
+
+      .card .example {
+        padding-left: 0.8rem;
       }
 
       .tagline {
@@ -216,13 +273,21 @@
 
     <section class="cards" aria-label="Therapy services">
       <article class="card">
-        <h2>CBT</h2>
-        <p>A practical, structured therapy that helps you notice unhelpful thought patterns and gently change how you respond to them.</p>
+        <p class="word">CBT</p>
+        <p class="phonetic">/ˌsiː biː ˈtiː/ · Cognitive Behavioural Therapy</p>
+        <p class="definition"><strong>CBT</strong> means a practical, structured therapy that helps you notice unhelpful thought patterns and gently change how you respond to them.</p>
+        <p class="section-title">What it can help with</p>
+        <p class="example">Anxiety, low mood, panic, stress, phobias and habits of thinking that keep you stuck.</p>
+        <span class="source">Inner Sense Therapy</span>
       </article>
 
       <article class="card">
-        <h2>Talking Therapy</h2>
-        <p>A calm, confidential space to talk things through, make sense of difficult feelings, and find a clearer way forward.</p>
+        <p class="word">Talking Therapy</p>
+        <p class="phonetic">/ˈtɔːkɪŋ ˈθɛrəpi/ · Counselling &amp; Psychotherapy</p>
+        <p class="definition"><strong>Talking therapy</strong> means a calm, confidential space to talk things through, make sense of difficult feelings, and find a clearer way forward.</p>
+        <p class="section-title">What it can help with</p>
+        <p class="example">Relationship difficulties, grief, life changes, low self-esteem and feeling overwhelmed or unheard.</p>
+        <span class="source">Inner Sense Therapy</span>
       </article>
     </section>
 
