@@ -14,6 +14,7 @@
       --green-2: #c8e6c9;
       --green-3: #a5d6a7;
       --green-4: #81c784;
+      --green-dark: #1b5e20;
       --text-dark: #1b3a1b;
       --text-mid: #4a6b4a;
     }
@@ -32,7 +33,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      min-height: 100vh;
+      padding: 2rem;
       font-family: 'Montserrat', sans-serif;
       color: var(--text-dark);
       background:
@@ -40,23 +42,55 @@
         radial-gradient(circle at 80% 80%, rgba(255,255,255,0.5) 0%, transparent 45%),
         linear-gradient(135deg, var(--green-1) 0%, var(--green-2) 40%, var(--green-3) 70%, var(--green-4) 100%);
       background-attachment: fixed;
-      min-height: 100vh;
-      padding: 2rem;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2rem, 6vw, 5rem);
+      width: min(100%, 1200px);
+    }
+
+    .logo {
+      flex: 0 1 320px;
+      max-width: min(45vw, 320px);
+      filter: drop-shadow(0 4px 18px rgba(27, 94, 32, 0.18));
+    }
+
+    .logo svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .logo svg :is(path, circle, line, ellipse) {
+      stroke: var(--green-dark);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .text {
+      flex: 1 1 auto;
+      text-align: left;
+      min-width: 260px;
     }
 
     .coming-soon {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
       font-weight: 400;
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--text-mid);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .brand {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3.2rem, 9vw, 7rem);
+      font-size: clamp(2.4rem, 6vw, 5rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.05;
@@ -67,12 +101,29 @@
 
     .tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
       font-weight: 400;
       font-style: italic;
       color: var(--text-mid);
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       letter-spacing: 0.05em;
+      max-width: 34ch;
+    }
+
+    @media (max-width: 680px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .logo {
+        max-width: min(60vw, 220px);
+      }
+      .text {
+        text-align: center;
+      }
+      .tagline {
+        max-width: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -84,10 +135,34 @@
   </style>
 </head>
 <body>
-  <main role="main">
-    <p class="coming-soon">Coming Soon</p>
-    <h1 class="brand">Inner Sense Therapy</h1>
-    <p class="tagline">A calm, clear space for CBT and talking therapy.</p>
+  <main class="hero" role="main">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 175
+                 C70 175 50 160 40 140
+                 C30 120 25 100 30 80
+                 C35 55 55 35 80 28
+                 C90 25 110 25 120 28
+                 C145 35 165 55 170 80
+                 C175 100 170 120 160 140
+                 C150 160 130 175 100 175Z" />
+        <path d="M100 175 C100 140 100 120 100 95" />
+        <path d="M100 95 C75 80 55 65 40 55" />
+        <path d="M100 95 C125 80 145 65 160 55" />
+        <path d="M100 95 C70 100 50 115 35 135" />
+        <path d="M100 95 C130 100 150 115 165 135" />
+        <path d="M100 55 C85 55 70 60 65 75" />
+        <path d="M100 55 C115 55 130 60 135 75" />
+        <path d="M65 110 C55 125 60 145 75 155" />
+        <path d="M135 110 C145 125 140 145 125 155" />
+        <circle cx="100" cy="68" r="6" />
+      </svg>
+    </div>
+    <div class="text">
+      <p class="coming-soon">Coming Soon</p>
+      <h1 class="brand">Inner Sense Therapy</h1>
+      <p class="tagline">A calm, clear space for CBT and talking therapy.</p>
+    </div>
   </main>
 </body>
 </html>
