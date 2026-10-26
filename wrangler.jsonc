@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "inner-sense-org-uk",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-26",
+  "account_id": "<ACCOUNT_ID>",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

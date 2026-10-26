@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inner Sense Therapy | Coming Soon</title>
+  <meta name="description" content="Inner Sense Therapy - Cognitive Behavioural Therapy services coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-1: #e8f5e9;
+      --green-2: #c8e6c9;
+      --green-3: #a5d6a7;
+      --green-4: #81c784;
+      --text-dark: #1b3a1b;
+      --text-mid: #4a6b4a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.5) 0%, transparent 45%),
+        linear-gradient(135deg, var(--green-1) 0%, var(--green-2) 40%, var(--green-3) 70%, var(--green-4) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .coming-soon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3.2rem, 9vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      text-shadow: 0 2px 12px rgba(27, 58, 27, 0.12);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-mid);
+      margin-top: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main role="main">
+    <p class="coming-soon">Coming Soon</p>
+    <h1 class="brand">Inner Sense Therapy</h1>
+    <p class="tagline">A calm, clear space for CBT and talking therapy.</p>
+  </main>
+</body>
+</html>
