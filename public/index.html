@@ -53,8 +53,8 @@
     }
 
     .logo {
-      flex: 0 1 320px;
-      max-width: min(45vw, 320px);
+      flex: 0 1 360px;
+      max-width: min(50vw, 360px);
       filter: drop-shadow(0 4px 18px rgba(27, 94, 32, 0.18));
     }
 
@@ -64,9 +64,9 @@
       display: block;
     }
 
-    .logo svg :is(path, circle, line, ellipse) {
+    .logo svg :is(path, circle, line, ellipse, rect, polyline) {
       stroke: var(--green-dark);
-      stroke-width: 5;
+      stroke-width: 4;
       stroke-linecap: round;
       stroke-linejoin: round;
       fill: none;
@@ -116,7 +116,7 @@
         text-align: center;
       }
       .logo {
-        max-width: min(60vw, 220px);
+        max-width: min(70vw, 280px);
       }
       .text {
         text-align: center;
@@ -137,25 +137,35 @@
 <body>
   <main class="hero" role="main">
     <div class="logo" aria-hidden="true">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 175
-                 C70 175 50 160 40 140
-                 C30 120 25 100 30 80
-                 C35 55 55 35 80 28
-                 C90 25 110 25 120 28
-                 C145 35 165 55 170 80
-                 C175 100 170 120 160 140
-                 C150 160 130 175 100 175Z" />
-        <path d="M100 175 C100 140 100 120 100 95" />
-        <path d="M100 95 C75 80 55 65 40 55" />
-        <path d="M100 95 C125 80 145 65 160 55" />
-        <path d="M100 95 C70 100 50 115 35 135" />
-        <path d="M100 95 C130 100 150 115 165 135" />
-        <path d="M100 55 C85 55 70 60 65 75" />
-        <path d="M100 55 C115 55 130 60 135 75" />
-        <path d="M65 110 C55 125 60 145 75 155" />
-        <path d="M135 110 C145 125 140 145 125 155" />
-        <circle cx="100" cy="68" r="6" />
+      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <path d="M110 185
+                 C90 185 75 180 65 170
+                 C55 160 52 145 58 130
+                 C45 122 38 108 42 90
+                 C46 72 62 62 78 60
+                 C86 40 102 30 122 28
+                 C142 26 158 36 168 52
+                 C182 56 190 70 190 88
+                 C190 104 180 116 168 122
+                 C174 138 170 154 160 168
+                 C150 180 132 185 116 185
+                 L114 185 L112 200 L108 185 Z" />
+
+        <path d="M58 130 C72 128 86 122 96 112 C106 102 112 88 112 70" />
+        <path d="M96 112 C112 106 128 108 140 116 C152 124 160 140 162 158" />
+        <path d="M140 116 C154 104 172 100 186 104" />
+        <path d="M112 70 C114 54 124 44 138 40 C152 36 166 40 174 50" />
+
+        <path d="M72 86 C72 74 80 66 90 66 C100 66 108 74 108 84 C108 94 100 102 90 102 C80 102 72 96 72 86 Z" />
+        <path d="M90 66 L90 84 L100 76" />
+        <path d="M82 84 L98 84" />
+
+        <path d="M148 80 C156 76 166 78 172 84" />
+        <path d="M148 86 C154 83 162 84 168 90" />
+        <path d="M148 92 C154 90 160 92 164 96" />
+
+        <path d="M98 148 C112 156 132 156 148 148" />
+        <path d="M100 160 C118 166 136 164 150 156" />
       </svg>
     </div>
     <div class="text">
